@@ -45,13 +45,13 @@ python scripts/rename_template.py your_fancy_extension_name
 - Using a python interpreter that has Isaac Lab installed, install the library
 
 ```bash
-python -m pip install -e exts/ext_template
+python -m pip install -e exts/bipedal
 ```
 
 - Verify that the extension is correctly installed by running the following command:
 
 ```bash
-python scripts/rsl_rl/train.py --task=Template-Isaac-Velocity-Rough-Anymal-D-v0
+python scripts/rsl_rl/train.py --task=Isaac-Bipedal-v6 --headless
 ```
 
 ### Set up IDE (Optional)
@@ -64,7 +64,7 @@ If everything executes correctly, it should create a file .python.env in the `.v
 
 ### Setup as Omniverse Extension (Optional)
 
-We provide an example UI extension that will load upon enabling your extension defined in `exts/ext_template/ext_template/ui_extension_example.py`. For more information on UI extensions, enable and check out the source code of the `omni.isaac.ui_template` extension and refer to the introduction on [Isaac Sim Workflows 1.2.3. GUI](https://docs.omniverse.nvidia.com/isaacsim/latest/introductory_tutorials/tutorial_intro_workflows.html#gui).
+We provide an example UI extension that will load upon enabling your extension defined in `exts/bipedal/bipedal/ui_extension_example.py`. For more information on UI extensions, enable and check out the source code of the `omni.isaac.ui_template` extension and refer to the introduction on [Isaac Sim Workflows 1.2.3. GUI](https://docs.omniverse.nvidia.com/isaacsim/latest/introductory_tutorials/tutorial_intro_workflows.html#gui).
 
 To enable your extension, follow these steps:
 
@@ -177,7 +177,10 @@ In some VsCode versions, the indexing of part of the extensions is missing. In t
 ```json
 {
     "python.analysis.extraPaths": [
-        "<path-to-ext-repo>/exts/ext_template"
+        "<path-to-ext-repo>/exts/bipedal",
+        "<path-to-IsaacLab>/source/extensions/omni.isaac.lab",
+        "<path-to-IsaacLab>/source/extensions/omni.isaac.lab_assets",
+        "<path-to-IsaacLab>/source/extensions/omni.isaac.lab_tasks"
     ]
 }
 ```
